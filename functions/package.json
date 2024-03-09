@@ -1,6 +1,7 @@
 {
   "name": "functions",
   "description": "Cloud Functions for Firebase",
+  "type": "commonjs",
   "scripts": {
     "serve": "firebase emulators:start --only functions",
     "shell": "firebase functions:shell",
@@ -13,8 +14,13 @@
   },
   "main": "index.js",
   "dependencies": {
+    "@langchain/openai": "^0.0.18",
+    "dotenv": "^16.4.5",
     "firebase-admin": "^11.8.0",
-    "firebase-functions": "^4.3.1"
+    "firebase-functions": "^4.3.1",
+    "langchain": "^0.1.25",
+    "openai": "^4.28.4",
+    "pdf-parse": "^1.1.1"
   },
   "devDependencies": {
     "firebase-functions-test": "^3.1.0"
