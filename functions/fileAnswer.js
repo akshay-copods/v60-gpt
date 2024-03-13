@@ -13,7 +13,7 @@ const createStore = (docs) =>
 
 
 const docsFromPDF = () => {
-  const loader = new PDFLoader("./depositor_LOTO.pdf");
+  const loader = new PDFLoader("./v60-vent.pdf");
   return loader.loadAndSplit(
     new CharacterTextSplitter({
       separator: ". ",
@@ -42,7 +42,7 @@ const loadStore = async () => {
       },
       {
         role: "user",
-        content: `Answer the following question using the provided context. If you cannot answer the question with the context, don't lie and make up stuff. Just say you need more context. 
+        content: `Answer the following question using the provided context. If you cannot answer the question with the context, don't fabricate answers. Instead, clearly state that more context is needed. If applicable, offer related terms or suggestions based on the context, using phrases like 'Did you mean ...?' or 'Are you looking for ...?'. 
         Question: ${chatMessage} 
         Context: ${results.map((r) => r.pageContent).join("\n")}`,
       },
