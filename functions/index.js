@@ -23,7 +23,7 @@ console.log('message', {message,body:req.body});
   const chatsRef = admin.firestore().collection('chats');
   await chatsRef.add({
     text: AIResponse,
-    createdAt: Date.now(),
+    createdAt: admin.firestore.FieldValue.serverTimestamp(),
     user: {_id: 4, name: 'Automated Capitalizer'}, // Assuming user 4 is your bot
   });
   
