@@ -13,7 +13,7 @@ const createStore = (docs) =>
 
 
 const docsFromPDF = () => {
-  const loader = new PDFLoader("./v60-vent.pdf");
+  const loader = new PDFLoader("./V60-cloud2.pdf");
   return loader.loadAndSplit(
     new CharacterTextSplitter({
       separator: ". ",
